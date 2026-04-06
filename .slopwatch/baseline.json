@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "createdAt": "2026-04-06T13:23:13.9702558+00:00",
+  "updatedAt": "2026-04-06T13:23:13.9751728+00:00",
+  "description": "Initial baseline created by 'slopwatch init' on 2026-04-06 13:23:13 UTC",
+  "entries": [
+    {
+      "hash": "451edd10f301f34c",
+      "ruleId": "SW003",
+      "filePath": "src/Rocket.Unsplash/ApiHelper.cs",
+      "lineNumber": 42,
+      "codeSnippet": "catch { }",
+      "message": "Empty catch block swallows exceptions without handling",
+      "baselinedAt": "2026-04-06T13:23:13.9751561+00:00"
+    }
+  ]
+}

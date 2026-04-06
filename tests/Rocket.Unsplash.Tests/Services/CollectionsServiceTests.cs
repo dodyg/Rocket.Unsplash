@@ -49,7 +49,7 @@ public sealed class CollectionsServiceTests
 
         var result = await service.ListAsync();
 
-        await Assert.That(result.Results).HasCount().EqualTo(1);
+        await Assert.That(result.Results.Count).IsEqualTo(1);
         await Assert.That(result.Total).IsEqualTo(100);
     }
 
@@ -87,6 +87,6 @@ public sealed class CollectionsServiceTests
 
         var related = await service.GetRelatedAsync(296);
 
-        await Assert.That(related).HasCount().EqualTo(1);
+        await Assert.That(related.Count).IsEqualTo(1);
     }
 }

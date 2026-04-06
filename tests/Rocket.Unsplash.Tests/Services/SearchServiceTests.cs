@@ -36,7 +36,7 @@ public sealed class SearchServiceTests
         await Assert.That(result!.Total).IsEqualTo(133);
         await Assert.That(result.TotalPages).IsEqualTo(7);
         await Assert.That(result.Results).IsNotNull();
-        await Assert.That(result.Results!).HasCount().EqualTo(1);
+        await Assert.That(result.Results!.Count).IsEqualTo(1);
         await Assert.That(result.Results![0].Id).IsEqualTo("eOLpJytrbsQ");
     }
 
@@ -66,7 +66,7 @@ public sealed class SearchServiceTests
 
         await Assert.That(result).IsNotNull();
         await Assert.That(result!.Total).IsEqualTo(237);
-        await Assert.That(result.Results!).HasCount().EqualTo(1);
+        await Assert.That(result.Results!.Count).IsEqualTo(1);
         await Assert.That(result.Results![0].Title).IsEqualTo("Office");
     }
 

@@ -69,7 +69,7 @@ public sealed class PhotosServiceTests
         await Assert.That(photo.Exif!.Make).IsEqualTo("Canon");
         await Assert.That(photo.Location!.City).IsEqualTo("Montreal");
         await Assert.That(photo.Tags).IsNotNull();
-        await Assert.That(photo.Tags!).HasCount().EqualTo(2);
+        await Assert.That(photo.Tags!.Count).IsEqualTo(2);
     }
 
     [Test]
@@ -93,7 +93,7 @@ public sealed class PhotosServiceTests
 
         var photos = await service.GetRandomAsync(2);
 
-        await Assert.That(photos).HasCount().EqualTo(2);
+        await Assert.That(photos.Count).IsEqualTo(2);
     }
 
     [Test]
@@ -105,7 +105,7 @@ public sealed class PhotosServiceTests
 
         var result = await service.ListAsync();
 
-        await Assert.That(result.Results).HasCount().EqualTo(1);
+        await Assert.That(result.Results.Count).IsEqualTo(1);
         await Assert.That(result.Total).IsEqualTo(100);
     }
 

@@ -48,7 +48,7 @@ public sealed class TopicsServiceTests
 
         var result = await service.ListAsync();
 
-        await Assert.That(result.Results).HasCount().EqualTo(1);
+        await Assert.That(result.Results.Count).IsEqualTo(1);
         await Assert.That(result.Results[0].Slug).IsEqualTo("wallpapers");
     }
 
@@ -71,7 +71,7 @@ public sealed class TopicsServiceTests
 
         var result = await service.GetPhotosAsync("wallpapers");
 
-        await Assert.That(result.Results).HasCount().EqualTo(1);
+        await Assert.That(result.Results.Count).IsEqualTo(1);
         await Assert.That(result.Results[0].Id).IsEqualTo("abc123");
     }
 }

@@ -94,7 +94,7 @@ public sealed class ModelSerializationTests
         await Assert.That(photo.Width).IsEqualTo(2448);
         await Assert.That(photo.Exif!.Iso).IsEqualTo(100);
         await Assert.That(photo.Location!.Position!.Latitude).IsEqualTo(45.473298);
-        await Assert.That(photo.Tags!).HasCount().EqualTo(2);
+        await Assert.That(photo.Tags!.Count).IsEqualTo(2);
         await Assert.That(photo.Urls!.Raw).IsEqualTo("https://images.unsplash.com/raw");
     }
 
@@ -145,7 +145,7 @@ public sealed class ModelSerializationTests
         await Assert.That(result).IsNotNull();
         await Assert.That(result!.Total).IsEqualTo(42);
         await Assert.That(result.TotalPages).IsEqualTo(5);
-        await Assert.That(result.Results!).HasCount().EqualTo(2);
+        await Assert.That(result.Results!.Count).IsEqualTo(2);
     }
 
     [Test]
